@@ -10,7 +10,7 @@ npm install --save fire-rtc firebase
 
 ## Demo
 
-a Chat demo application can be found here [fire-rtc-chat](https://github.com/mklan/fire-rtc-chat)
+[fire-rtc-chat](https://github.com/mklan/fire-rtc-chat)
 
 ## Usage
 
