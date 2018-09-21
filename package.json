@@ -1,0 +1,50 @@
+{
+  "name": "fire-rtc",
+  "description": "serverless webRTC, using firebase's database as the sdp-broker",
+  "version": "1.0.1",
+  "author": {
+    "name": "Matthias Klan",
+    "email": "matthias.klan@gmail.com",
+    "url": "https://klanm.at"
+  },
+  "bugs": {
+    "url": "https://github.com/mklan/fire-rtc/issues"
+  },
+  "peerDependencies": {
+    "simple-peer": "^9.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "simple-peer": "^9.1.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "keywords": [
+    "webrtc",
+    "firebase",
+    "realtime",
+    "p2p",
+    "peer2peer",
+    "peer-to-Peer",
+    "data",
+    "data channel",
+    "data channel stream",
+    "data channels",
+    "peer",
+    "webrtc stream"
+  ],
+  "license": "GNU GPLv3",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mklan/fire-rtc.git"
+  },
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "rm -rf dist/* && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+}
