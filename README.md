@@ -38,15 +38,9 @@ const fireRTC = createFireRTC({
       firebase, // pass the firebase instance
       id: 'my first serverless webrtc connection', // choose randomly and share with other party
       initiator: true, // the other party needs to set this to false and join afterwards!
-      onSignal: handleSignal, // gets called when the own sdp gets generated
       onConnect: handleConnect, // gets called when the connection is established
       onData: handleData, // gets called each time a new message arrives
     });
-
-function handleSignal (signal) {
-  // signal is generated so we can join
-  fireRTC.join();
-}
 
 function handleConnect () {
   fireRTC.send('hello!')
