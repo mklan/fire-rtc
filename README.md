@@ -5,7 +5,7 @@ serverless webRTC using firebase's realtime database as signaling broker
 ## Install
 
 ```bash
-npm install --save fire-rtc
+npm install --save fire-rtc firebase
 ```
 
 ## Demo
@@ -18,6 +18,8 @@ first initialize fire base on both sides
 
 
 ```JavaScript
+import firebase from 'firebase';
+
 firebase.initializeApp({
   apiKey: 'XXXXXXXXXXXXXXXXXXX', 
   databaseURL: 'XXXXXXXXXXXXXXXXX', 
@@ -28,6 +30,8 @@ firebase.initializeApp({
 than create a new fireRTC instance 
 
 ```JavaScript
+import createFireRTC from 'fire-rtc';
+
 const fireRTC = createFireRTC({
       firebase, // pass the firebase instance
       id: 'my first serverless webrtc connection', // choose randomly and share with other party
