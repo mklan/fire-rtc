@@ -14,8 +14,10 @@ npm install --save fire-rtc firebase
 
 ## Usage
 
-first initialize fire base on both sides
+All the steps below needs to be executed on both sides, but the `initiator` value is different!
 
+
+initialize a firebase app
 
 ```JavaScript
 import firebase from 'firebase';
@@ -27,7 +29,7 @@ firebase.initializeApp({
 });
 ```
 
-than create a new fireRTC instance 
+after that create a new fireRTC instance and pass the firebase instance
 
 ```JavaScript
 import createFireRTC from 'fire-rtc';
@@ -37,7 +39,7 @@ const fireRTC = createFireRTC({
       id: 'my first serverless webrtc connection', // choose randomly and share with other party
       initiator: true, // the other party needs to set this to false and join afterwards!
       onSignal: handleSignal, // gets called when the own sdp gets generated
-      onConnect: handleConnect,
+      onConnect: handleConnect, // gets called when the connection is established
       onData: handleData, // gets called each time a new message arrives
     });
 
