@@ -17,10 +17,14 @@
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
+    "jest": "^23.6.0",
     "simple-peer": "^9.1.2",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "wrtc": "^0.2.0"
   },
   "keywords": [
     "webrtc",
@@ -45,6 +49,6 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "rm -rf dist/* && webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "jest"
+  }
 }
