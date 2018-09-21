@@ -23,6 +23,7 @@ export default function createFireRTC({
     debug && console.log('SIGNAL', signal);
     ownSignal = signal;
     onSignal(signal);
+    join();
   });
 
   p.on('connect', function () {
@@ -61,7 +62,6 @@ export default function createFireRTC({
   }
 
   return {
-    join,
     send
   };
 }

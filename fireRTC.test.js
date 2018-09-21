@@ -1,6 +1,17 @@
 import wrtc from 'wrtc';
 import createFireRTC from "./fireRTC";
 
+//mock
+const firebase = {
+  app: () => ({
+      database: () => ({
+        ref: () => ({
+          on: () => {},
+          set: () => {},
+        }),
+      }),
+  }),
+};
 
 describe('fireRTC', async () => {
   it('should return the correct methods to operate with', () => {
@@ -8,14 +19,13 @@ describe('fireRTC', async () => {
       peerConfig: {
         wrtc,
       },
-      firebase: {},
+      firebase,
       id: '12345',
       initiator: true,
     });
 
-    expect(fireRTC.join).toBeDefined();
     expect(fireRTC.send).toBeDefined();
-    expect(Object.keys(fireRTC).length).toBe(2);
+    expect(Object.keys(fireRTC).length).toBe(1);
   });
 
   it('as initiator it should return the offer signal in callback', (done) => {
@@ -23,7 +33,7 @@ describe('fireRTC', async () => {
       peerConfig: {
         wrtc,
       },
-      firebase: {},
+      firebase,
       id: '12345',
       initiator: true,
       onSignal: (signal) => {
