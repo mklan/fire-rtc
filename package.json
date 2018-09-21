@@ -1,7 +1,7 @@
 {
   "name": "fire-rtc",
   "description": "serverless webRTC, using firebase's database as the sdp-broker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Matthias Klan",
     "email": "matthias.klan@gmail.com",
