@@ -54,8 +54,15 @@ function handleData(data) {
 
 ## How does this work?
 
-- When you call the `join` method, the library writes your sdp configuration into the database under the defined id.
-- Your partner enters the same id but set initator to `false`. After `join()` his sdp is also written to the database.
-- Both of you get notified of the others sdp config via a firebase event.
+- both sdps are written to the database when creating a fireRTC instance.
+- Both of you get notified of the others sdp config via the realtime db firebase event.
 - After both parties have the other's sdp config, the webRTC connection can be established.
 - The sdps are deleted because they are not needed anymore
+
+
+https://webrtcglossary.com/sdp/
+
+https://firebase.google.com/docs/database/web/read-and-write#basic_write
+
+https://firebase.google.com/docs/database/web/read-and-write#listen_for_value_events
+
