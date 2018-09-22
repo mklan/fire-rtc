@@ -5,7 +5,7 @@ const generateCommonJSExternals = libs => libs.reduce((acc, lib) => ({ ...acc, [
 
 module.exports = {
   mode: 'production',
-  entry: path.join(__dirname, './fireRTC.js'),
+  entry: path.join(__dirname, './src/fireRTC.js'),
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
