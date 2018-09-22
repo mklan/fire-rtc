@@ -1,24 +1,45 @@
 import Peer from 'simple-peer';
 
-const fireRTC = function createFireRTC({
-  id, // peer id to identify the webRTC connection
-  firebase, // firebase instance
-  initiator, // whether you initiate the connection
-  firebaseNameSpace, // optional firebase namespace
-  peerConfig = {}, // further simple-peer configurations
+// language=JavaScript
+/**
+ *
+ * @param  {string} id - peer id to identify the webRTC connection.
+ * @param {object} firebase - firebase instance
+ * @param {boolean} initiator - whether you are initiating the connection
+ * @param {string }firebaseNameSpace - optional namespace of your firebase app
+ * @param {object} peerConfig - further simple-peer configurations
+ * @param {function(p)} onConnect - callback when connected
+ * @param {function(data)} onData - callback when data was received
+ * @param {function(signal)} onSignal - callback when own signal was generated
+ * @param {function(e)} onError - callback when error is thrown
+ * @returns {{send: (function(*=): void)}}
+ */
+const createFireRTC = ({
+  id,
+  firebase,
+  initiator,
+  firebaseNameSpace,
+  peerConfig = {},
   onConnect = () => {
-  }, // callback when connected
+  },
   onData = () => {
-  }, // callback when data was received
+  },
   onSignal = () => {
-  }, // callback when own signal is ready (from this point on you can join
+  },
   onError = () => {
-  }, // callback when error is thrown
-}) {
+  },
+}) => {
   let ownSignal;
 
   const p = new Peer({ ...peerConfig, initiator, trickle: false });
 
+  function setSignal(signal) {
+    firebase.app(firebaseNameSpace).database().ref(`sdp/${id}/${ownSignal.type}`).set(signal);
+  }
+
+  /**
+   *  listens to other party's sdp
+   */
   function listen() {
     const relevantType = initiator ? 'answer' : 'offer';
     const sdpRef = firebase.app(firebaseNameSpace).database().ref(`sdp/${id}`);
@@ -27,18 +48,15 @@ const fireRTC = function createFireRTC({
     });
   }
 
-  function join() {
-    if (!ownSignal) throw new Error('join failed, due to missing signal');
-    if (initiator) listen();
-    firebase.app(firebaseNameSpace).database().ref(`sdp/${id}/${ownSignal.type}`).set(ownSignal);
-  }
+  if (!initiator) listen();
 
   p.on('error', onError);
 
   p.on('signal', (signal) => {
-    if (ownSignal) return;
+    if (ownSignal) return; // prevents multiple execution, but needs a proper fix
     ownSignal = signal;
-    join();
+    setSignal();
+    if (initiator) listen();
     onSignal(signal);
   });
 
@@ -51,11 +69,9 @@ const fireRTC = function createFireRTC({
     onData(data);
   });
 
-  if (!initiator) listen();
-
   return {
     send: data => p.send(data), // Why does `send: p.send` not work?
   };
 };
 
-export default fireRTC;
+export default createFireRTC;
