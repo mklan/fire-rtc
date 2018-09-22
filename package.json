@@ -49,7 +49,7 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "rm -rf dist/* && webpack",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "dependencies": {}
 }
