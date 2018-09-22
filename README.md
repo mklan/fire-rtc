@@ -59,7 +59,10 @@ function handleData(data) {
 - After both parties have the other's sdp config, the webRTC connection can be established.
 - The sdps are deleted because they are not needed anymore
 
+
 https://webrtcglossary.com/sdp/
+
 https://firebase.google.com/docs/database/web/read-and-write#basic_write
+
 https://firebase.google.com/docs/database/web/read-and-write#listen_for_value_events
 
