@@ -2,13 +2,12 @@
   <img height="120px" src="logo.png" />
 </p>
 
+Serverless webRTC using firebase's realtime database as a signaling broker.
+
 [![Build Status](https://api.travis-ci.com/mklan/fire-rtc.svg?branch=master)](https://travis-ci.com/mklan/fire-rtc)
 [![NPM](https://img.shields.io/npm/v/fire-rtc.svg)](https://www.npmjs.com/package/fire-rtc)
+[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/mklan/fire-rtc.svg?maxAge=2592000)](https://codecov.io/github/mklan/fire-rtc?branch=master)
 ![Licence](https://img.shields.io/github/license/mklan/fire-rtc.svg)
-
-# fire-rtc 
-
-serverless webRTC using firebase's realtime database as signaling broker
 
 ## Install
 
