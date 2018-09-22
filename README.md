@@ -1,4 +1,13 @@
-# fire-rtc
+<p align="center">
+  <img height="120px" src="https://firebase.google.com/images/brand-guidelines/lockup_realtime-database.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+  <img height="120px" src="https://webrtc.org/assets/images/webrtc-logo-vert-retro-dist.svg" />
+</p>
+
+[![Build Status](https://api.travis-ci.com/mklan/fire-rtc.svg?branch=master)](https://travis-ci.com/mklan/fire-rtc)
+[![NPM](https://img.shields.io/npm/v/fire-rtc.svg)](https://www.npmjs.com/package/fire-rtc)
+![Licence](https://img.shields.io/github/license/mklan/fire-rtc.svg)
+
+# fire-rtc 
 
 serverless webRTC using firebase's realtime database as signaling broker
 
