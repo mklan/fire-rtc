@@ -5,6 +5,7 @@
 
 [![Build Status](https://api.travis-ci.com/mklan/fire-rtc.svg?branch=master)](https://travis-ci.com/mklan/fire-rtc)
 [![NPM](https://img.shields.io/npm/v/fire-rtc.svg)](https://www.npmjs.com/package/fire-rtc)
+![Licence](https://img.shields.io/github/license/mklan/fire-rtc.svg)
 
 # fire-rtc 
 
