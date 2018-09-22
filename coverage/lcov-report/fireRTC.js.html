@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">87.88% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>29/33</span>
+        <span class='fraction'>26/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">72% </span>
+        <span class="strong">78.95% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>18/25</span>
+        <span class='fraction'>15/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">76.92% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>10/13</span>
+        <span class='fraction'>10/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">96.3% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>26/27</span>
+        <span class='fraction'>23/23</span>
       </div>
     </div>
   </div>
@@ -104,13 +104,9 @@
 59
 60
 61
-62
-63
-64
-65
-66
-67
-68</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,28 +121,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -165,92 +139,100 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Peer from 'simple-peer';
 &nbsp;
-export default function createFireRTC({
-                                        firebase, // firebase instance
-                                        initiator, // whether you initiate the connection
-                                        firebaseNameSpace, // optional firebase namespace
-                                        peerConfig = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> // further simple-peer configurations
-                                        debug, // log debug outputs
-                                        id, // peer id to identify the webRTC connection
-                                        onError = <span class="fstat-no" title="function not covered" >()</span> =&gt; {}, // error callback
-                                        onConnect = () =&gt; {}, // callback when connected
-                                        onData = <span class="fstat-no" title="function not covered" >()</span> =&gt; {}, // callback when data was received
-                                        onSignal = () =&gt; {} // callback when own signal is ready (from this point on you can join
-                                      }) {
-&nbsp;
+const fireRTC = function createFireRTC({
+  id, // peer id to identify the webRTC connection
+  firebase, // firebase instance
+  initiator, // whether you initiate the connection
+  firebaseNameSpace, // optional firebase namespace
+  peerConfig = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> // further simple-peer configurations
+  onConnect = () =&gt; {
+  }, // callback when connected
+  onData = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  }, // callback when data was received
+  onSignal = () =&gt; {
+  }, // callback when own signal is ready (from this point on you can join
+  onError = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+  }, // callback when error is thrown
+}) {
   let ownSignal;
+&nbsp;
   const p = new Peer({ ...peerConfig, initiator, trickle: false });
 &nbsp;
-  p.on('error', <span class="fstat-no" title="function not covered" >fu</span>nction (err) { <span class="cstat-no" title="statement not covered" >console.error('error', err) </span>});
+  function listen() {
+    const relevantType = initiator ? 'answer' : 'offer';
+    const sdpRef = firebase.app(firebaseNameSpace).database().ref(`sdp/${id}`);
+    sdpRef.on('value', (s) =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (s.val() &amp;&amp; s.val()[relevantType]) p.signal(s.val()[relevantType]);
+    });
+  }
 &nbsp;
-  p.on('signal', function (signal) {
+  function join() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!ownSignal) <span class="cstat-no" title="statement not covered" >throw new Error('join failed, due to missing signal');</span>
+    if (initiator) listen();
+    firebase.app(firebaseNameSpace).database().ref(`sdp/${id}/${ownSignal.type}`).set(ownSignal);
+  }
+&nbsp;
+  p.on('error', onError);
+&nbsp;
+  p.on('signal', (signal) =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (ownSignal) <span class="cstat-no" title="statement not covered" >return;</span>
-    debug &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >console.log('SIGNAL', signal);</span>
     ownSignal = signal;
     join();
     onSignal(signal);
   });
 &nbsp;
-  p.on('connect', function () {
-    debug &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >console.log('CONNECTED');</span>
+  p.on('connect', () =&gt; {
     firebase.app(firebaseNameSpace).database().ref(`sdp/${id}`).remove();
     onConnect(p);
   });
 &nbsp;
-  p.on('data', function (data) {
-    debug &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >console.log('data: ' + data);</span>
+  p.on('data', (data) =&gt; {
     onData(data);
   });
 &nbsp;
-  if(!initiator) listen();
-&nbsp;
-  function listen() {
-    const relevantType = initiator ? 'answer' : 'offer';
-    const sdpRef = firebase.app(firebaseNameSpace).database().ref(`sdp/${id}`);
-    sdpRef.on('value', s =&gt; {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if(s.val() &amp;&amp; s.val()[relevantType]) p.signal(s.val()[relevantType]);
-    });
-  }
-&nbsp;
-  function join() {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(!ownSignal) <span class="cstat-no" title="statement not covered" >throw new Error('join failed, due to missing signal');</span>
-    if(initiator) listen();
-    firebase.app(firebaseNameSpace).database().ref(`sdp/${id}/${ownSignal.type}`).set(ownSignal);
-  }
-&nbsp;
-  function send(data) {
-    try{
-      p.send(data);
-    } catch ( e) {
-<span class="cstat-no" title="statement not covered" >      onError(e);</span>
-    }
-  }
+  if (!initiator) listen();
 &nbsp;
   return {
-    send
+    send: data =&gt; p.send(data), // Why does `send: p.send` not work?
   };
-}
+};
+&nbsp;
+export default fireRTC;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Sep 22 2018 18:27:41 GMT+0200 (Central European Summer Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 23 2018 00:22:22 GMT+0200 (Central European Summer Time)
 </div>
 </div>
 <script src="prettify.js"></script>

@@ -54,7 +54,7 @@ const fireRTC = function createFireRTC({
   if (!initiator) listen();
 
   return {
-    send: p.send,
+    send: data => p.send(data), // Why does `send: p.send` not work?
   };
 };
 
