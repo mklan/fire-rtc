@@ -1,9 +1,9 @@
+/* eslint-disable no-undef */
 import wrtc from 'wrtc';
-import createFireRTC from "./fireRTC";
+import createFireRTC from './fireRTC';
 
 
-
-//mock
+// mock
 let initiatorOnValueCallback;
 let partnersOnValueCallback;
 
@@ -12,7 +12,7 @@ const initiatorFirebase = {
     database: () => ({
       ref: () => ({
         on: (key, callback) => {
-          initiatorOnValueCallback = callback
+          initiatorOnValueCallback = callback;
         },
         set: () => {},
         remove: () => {}, // TODO gets called after connect
@@ -26,7 +26,7 @@ const partnersFirebase = {
     database: () => ({
       ref: () => ({
         on: (key, callback) => {
-          partnersOnValueCallback = callback
+          partnersOnValueCallback = callback;
         },
         set: () => {},
         remove: () => {},
@@ -76,10 +76,10 @@ describe('fireRTC', async () => {
       id: '12345',
       initiator: true,
       onConnect: mockOnConnect,
-      onSignal: offer => {
+      onSignal: (offer) => {
         partnersOnValueCallback({
-          val: () => ({ offer })
-        })
+          val: () => ({ offer }),
+        });
       },
     });
 
@@ -97,14 +97,13 @@ describe('fireRTC', async () => {
       },
       onSignal: (answer) => {
         initiatorOnValueCallback({
-          val: () => ({ answer })
-        })
+          val: () => ({ answer }),
+        });
       },
     });
   });
 
   it('initiator should receive message at onData callback when partner leverages send method', (done) => {
-
     const mockData = 'hello you';
     createFireRTC({
       peerConfig: {
@@ -113,10 +112,10 @@ describe('fireRTC', async () => {
       firebase: initiatorFirebase,
       id: '12345',
       initiator: true,
-      onSignal: offer => {
+      onSignal: (offer) => {
         partnersOnValueCallback({
-          val: () => ({ offer })
-        })
+          val: () => ({ offer }),
+        });
       },
       onData: (data) => {
         expect(data).toBeDefined();
@@ -137,26 +136,25 @@ describe('fireRTC', async () => {
 
       onSignal: (answer) => {
         initiatorOnValueCallback({
-          val: () => ({ answer })
-        })
+          val: () => ({ answer }),
+        });
       },
     });
   });
 
   it('partner should receive message at onData callback when initiator leverages send method', (done) => {
-
     const mockData = 'hello you';
-    const initiatorFireRTC =  createFireRTC({
+    const initiatorFireRTC = createFireRTC({
       peerConfig: {
         wrtc,
       },
       firebase: initiatorFirebase,
       id: '12345',
       initiator: true,
-      onSignal: offer => {
+      onSignal: (offer) => {
         partnersOnValueCallback({
-          val: () => ({ offer })
-        })
+          val: () => ({ offer }),
+        });
       },
     });
 
@@ -176,8 +174,8 @@ describe('fireRTC', async () => {
       },
       onSignal: (answer) => {
         initiatorOnValueCallback({
-          val: () => ({ answer })
-        })
+          val: () => ({ answer }),
+        });
       },
     });
   });
