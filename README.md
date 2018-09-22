@@ -1,4 +1,6 @@
-# fire-rtc
+# fire-rtc 
+
+[![Build Status](https://api.travis-ci.com/mklan/fire-rtc.svg?branch=master)](https://travis-ci.com/mklan/fire-rtc)
 
 serverless webRTC using firebase's realtime database as signaling broker
 
