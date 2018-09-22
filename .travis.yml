@@ -1,0 +1,10 @@
+language: node_js
+before_script:
+  - npm run test
+deploy:
+  provider: npm
+  email: matthias.klan@gmail.com
+  on:
+    tags: true
+  api_key:
+    secure: jfni6N5Tfvnk9Ss5zCAA3UCkegoswWxcLlifyVGOGcqcjE41MGXWVB7A4nxxA5cqvQUHBtiu/aa0fEGVS9W6S1spTiDk/mUzIRqs7vL+JwIcL6HZNakdXVaUxUdCyvZ9E/OAaFTND5t08R0yRLEPKUY/rKVe2bZ5AVuxHYHigmRP0RbYZw4o4VvySVATGy6fsgcHXLsGTl+vVjx8WyJM4HrQ6Vwv4bYfbtSAWW6vkof0IGxqoMGiQlII9iBakpdQl/wn6sGqh8yPFg3f0wdCS9rdkGdS9+L96oHTfRuZRgrd72XitnCbbkcHl9YHrA4SQjr2JWpcDCophhBaU5+JGu7aTF+ZFNreP+Z5nKDlhJXqeBBhife0klmlh2ZpV5BLIwOejrUiCz7Za++9yVOrL8n2Pt1HP0oTLJwiHdhqCIlB7ewxadp7gGr9kcNaOOqZOMGWQ1DV9vEHpSAyW7BiCvK12hmN+SVOFRMAM+PGSiUc3LE0CuHuUcOtDPkBjfQ+404122vcfUvZzdHJlvMNxGXee8909Idcey+S26ZLlFZvX3LY3wq6F97dRjolg6AHmqrU8V7Me2OWabrl/6qmrTn7fETPpMtsgaYObjwmuc1GPDcqoETwqw1G21a4pi1imWj5zU3w+Rf44mR/LfjHGuLNuZ5bOk0OjFFC++RMIpw=
