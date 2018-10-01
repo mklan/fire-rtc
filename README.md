@@ -49,11 +49,11 @@ const fireRTC = createFireRTC({
       onData: handleData, // gets called each time a new message arrives
     });
 
-function handleConnect () {
-  fireRTC.send('hello!')
+function handleConnect(){
+  fireRTC.send('hello!');
 }
 
-function handleData(data) {
+function handleData(data){
   console.log('new message', data);
 }
 
